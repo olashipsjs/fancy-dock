@@ -1,12 +1,9 @@
 const App = () => {
   return (
-    <div>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum corporis
-        dolorum ad? Saepe voluptatem architecto rerum, facere dolorem accusamus
-        inventore earum quos, maxime minus facilis voluptatibus nesciunt ipsa,
-        natus beatae?
-      </p>
+    <div className='min-h-screen flex flex-col items-end justify-center'>
+      <div className='bg-slate-700'>
+        <h6>Introduction</h6>
+      </div>
     </div>
   );
 };
