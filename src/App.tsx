@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowLeft } from './components/icons/ArrowLeft';
 import { LineVertical } from './components/icons/LineVertical';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const titles = [
   'Intro',
@@ -13,36 +15,58 @@ const titles = [
 
 const App = () => {
   const [showTitles, setShowTitles] = React.useState(false);
+  const [currentTitle, setCurrentTitle] = React.useState(titles[0]);
+
+  useGSAP(() => {
+    gsap.to('#titles', {
+      duration: 0.2,
+      ease: 'power2.out',
+      height: showTitles ? 'auto' : 0,
+      marginBottom: showTitles ? 12 : 0,
+    });
+
+    gsap.to('#container', {
+      duration: 0.25,
+      ease: 'elastic.inOut',
+      width: showTitles ? 360 : 320,
+      borderRadius: showTitles ? 16 : 24,
+    });
+  }, [showTitles]);
 
   return (
     <div className='min-h-screen flex flex-col items-center justify-end max-w-[400px] mx-auto p-4'>
       <div
-        className={`bg-gray-900 w-4/5 rounded-[24px] transition-all duration-200 ease-out flex flex-col gap-4 overflow-clip p-1  ${
-          showTitles && 'rounded-[16px]'
-        }`}
+        id='container'
+        className='bg-gray-900 rounded-[24px] transition-all duration-200 ease-out flex flex-col overflow-clip p-1'
       >
-        {showTitles ? (
-          <div className='flex overflow-x-auto flex-col'>
-            {titles.map((title, index) => {
-              return (
-                <button
-                  key={index}
-                  className={`text-white w-full flex flex-col text-sm font-medium py-1.5 px-2 transition-all duration-200 ease-linear cursor-pointer hover:bg-gray-500 rounded-lg ${
-                    index !== 0 && 'text-gray-500 hover:text-white'
-                  }`}
-                >
-                  {title}
-                </button>
-              );
-            })}
-          </div>
-        ) : null}
-
         <div
-          className='flex items-center gap-1'
-          onClick={() => setShowTitles(!showTitles)}
+          id='titles'
+          className='flex overflow-x-auto flex-col overflow-clip'
         >
-          <button className='size-6 bg-transparent hover:bg-gray-500 flex items-center justify-center rounded-full'>
+          {titles.map((title, index) => {
+            return (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentTitle(title);
+                  setShowTitles(false);
+                }}
+                className={`text-white w-full flex flex-col text-sm font-medium py-1.5 px-2 transition-all duration-200 ease-linear cursor-pointer hover:bg-gray-500 rounded-[8px] ${
+                  index !== 0 && 'text-gray-500 hover:text-white'
+                }`}
+              >
+                {title}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className='flex items-center gap-0.5'>
+          <button
+            disabled={!showTitles}
+            className='size-6 bg-transparent hover:bg-gray-500 flex items-center justify-center rounded-full transition-all duration-200 ease-linear disabled:opacity-50'
+            onClick={() => setShowTitles(false)}
+          >
             <ArrowLeft
               width={16}
               height={16}
@@ -54,8 +78,13 @@ const App = () => {
             height={16}
             className='text-gray-500'
           />
-          <h6 className='text-white text-sm font-medium flex-1'>Intro</h6>
-          <button className='py-1.5 px-3 rounded-full text-white leading-[1] bg-gray-500 text-xs font-semibold'>
+          <button
+            className='text-white text-sm font-medium flex-1 text-left cursor-pointer'
+            onClick={() => setShowTitles(!showTitles)}
+          >
+            {currentTitle}
+          </button>
+          <button className='py-1.5 px-3 rounded-full text-white leading-[1] bg-gray-500 text-xs font-semibold cursor-default'>
             10%
           </button>
         </div>
