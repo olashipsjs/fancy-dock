@@ -53,8 +53,10 @@ const App = () => {
                   setShowTitles(false);
                 }}
                 className={clsx(
-                  'text-white w-full flex flex-col text-sm font-medium py-1.5 px-2 transition-all duration-200 ease-linear cursor-pointer hover:bg-gray-500 rounded-[10px]',
-                  currentTitle !== title && 'text-gray-500 hover:text-white'
+                  'w-full flex flex-col text-sm font-medium py-1.5 px-2 transition-all duration-200 ease-linear cursor-pointer hover:bg-gray-500 rounded-[10px]',
+                  currentTitle !== title
+                    ? 'text-gray-500 hover:text-white'
+                    : 'text-white'
                 )}
               >
                 {title}
