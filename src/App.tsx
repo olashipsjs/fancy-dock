@@ -42,7 +42,7 @@ const App = () => {
       >
         <div
           id='titles'
-          className='flex overflow-x-auto flex-col overflow-clip'
+          className='flex flex-col overflow-x-auto overflow-clip'
         >
           {titles.map((title, index) => {
             return (
@@ -65,7 +65,7 @@ const App = () => {
         <div className='flex items-center gap-0.5'>
           <button
             disabled={!showTitles}
-            className='size-6 bg-transparent hover:bg-gray-500 flex items-center justify-center rounded-full transition-all duration-200 ease-linear disabled:opacity-50'
+            className='flex items-center justify-center transition-all duration-200 ease-linear bg-transparent rounded-full size-6 hover:bg-gray-500 disabled:opacity-50 disabled:pointer-events-none'
             onClick={() => setShowTitles(false)}
           >
             <ArrowLeft
@@ -80,7 +80,7 @@ const App = () => {
             className='text-gray-500'
           />
           <button
-            className='text-white text-sm font-medium flex-1 text-left cursor-pointer'
+            className='flex-1 text-sm font-medium text-left text-white cursor-pointer'
             onClick={() => setShowTitles(!showTitles)}
           >
             {currentTitle}
