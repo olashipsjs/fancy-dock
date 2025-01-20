@@ -3,6 +3,7 @@ import { ArrowLeft } from './components/icons/ArrowLeft';
 import { LineVertical } from './components/icons/LineVertical';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import clsx from 'clsx';
 
 const titles = [
   'Intro',
@@ -21,7 +22,6 @@ const App = () => {
     gsap.to('#titles', {
       duration: 0.2,
       ease: 'power2.out',
-      padding: showTitles ? 4 : 0,
       height: showTitles ? 'auto' : 0,
       marginBottom: showTitles ? 12 : 0,
     });
@@ -52,9 +52,10 @@ const App = () => {
                   setCurrentTitle(title);
                   setShowTitles(false);
                 }}
-                className={`text-white w-full flex flex-col text-sm font-medium py-1.5 px-2 transition-all duration-200 ease-linear cursor-pointer hover:bg-gray-500 rounded-[8px] ${
+                className={clsx(
+                  'text-white w-full flex flex-col text-sm font-medium py-1.5 px-2 transition-all duration-200 ease-linear cursor-pointer hover:bg-gray-500 rounded-[10px]',
                   currentTitle !== title && 'text-gray-500 hover:text-white'
-                }`}
+                )}
               >
                 {title}
               </button>
