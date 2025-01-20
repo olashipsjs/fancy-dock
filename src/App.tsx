@@ -27,7 +27,7 @@ const App = () => {
     });
 
     gsap.to('#container', {
-      duration: 0.25,
+      duration: 0.2,
       ease: 'elastic.inOut',
       width: showTitles ? 360 : 320,
       borderRadius: showTitles ? 16 : 24,
