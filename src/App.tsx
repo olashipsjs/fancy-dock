@@ -3,7 +3,7 @@ import { ArrowLeft } from './components/icons/ArrowLeft';
 import { LineVertical } from './components/icons/LineVertical';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 const titles = [
   'Intro',
