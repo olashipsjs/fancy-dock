@@ -21,6 +21,7 @@ const App = () => {
     gsap.to('#titles', {
       duration: 0.2,
       ease: 'power2.out',
+      padding: showTitles ? 4 : 0,
       height: showTitles ? 'auto' : 0,
       marginBottom: showTitles ? 12 : 0,
     });
@@ -37,7 +38,7 @@ const App = () => {
     <div className='min-h-screen flex flex-col items-center justify-end max-w-[400px] mx-auto p-4'>
       <div
         id='container'
-        className='bg-gray-900 rounded-[24px] transition-all duration-200 ease-out flex flex-col overflow-clip p-1'
+        className='bg-gray-900 rounded-[24px] transition-all duration-200 ease-out flex flex-col overflow-clip p-1 max-w-full mx-auto'
       >
         <div
           id='titles'
@@ -52,7 +53,7 @@ const App = () => {
                   setShowTitles(false);
                 }}
                 className={`text-white w-full flex flex-col text-sm font-medium py-1.5 px-2 transition-all duration-200 ease-linear cursor-pointer hover:bg-gray-500 rounded-[8px] ${
-                  index !== 0 && 'text-gray-500 hover:text-white'
+                  currentTitle !== title && 'text-gray-500 hover:text-white'
                 }`}
               >
                 {title}
