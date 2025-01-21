@@ -1,8 +1,15 @@
 export const Hero = () => {
   return (
     <section>
-      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-[17px] leading-[1.6rem] text-gray-600'>
-        <h1 className='text-5xl font-semibold text-gray-900'>Fancy dock bar</h1>
+      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-8 text-base leading-[1.6rem] text-gray-600'>
+        <img
+          src='/assets/images/hero.png'
+          alt='fancy-dock-bar'
+          className='object-cover w-full rounded-md ring-gray-100 ring-1 md:h-[28rem] object-bottom aspect-video'
+        />
+        <h1 className='text-3xl font-semibold text-center text-gray-900 md:text-5xl'>
+          Fancy dock bar
+        </h1>
       </div>
     </section>
   );
@@ -11,7 +18,7 @@ export const Hero = () => {
 export const Intro = () => {
   return (
     <section>
-      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-[17px] leading-[1.6rem] text-gray-600'>
+      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
         <h2
           className='text-2xl font-semibold text-gray-900'
           id='intro'
@@ -40,7 +47,7 @@ export const Intro = () => {
 export const Overview = () => {
   return (
     <section>
-      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-[17px] leading-[1.6rem] text-gray-600'>
+      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
         <h2
           className='text-2xl font-semibold text-gray-900'
           id='overview'
@@ -138,7 +145,7 @@ export const Overview = () => {
 export const Problem = () => {
   return (
     <section>
-      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-[17px] leading-[1.6rem] text-gray-600'>
+      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
         <h2
           id='problem'
           className='text-2xl font-semibold text-gray-900'
@@ -235,7 +242,7 @@ export const Problem = () => {
 export const Rebrand = () => {
   return (
     <section>
-      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-[17px] leading-[1.6rem] text-gray-600'>
+      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
         <h2
           id='rebrand'
           className='text-2xl font-semibold text-gray-900'
@@ -297,7 +304,7 @@ export const Rebrand = () => {
 export const Stack = () => {
   return (
     <section>
-      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-[17px] leading-[1.6rem] text-gray-600'>
+      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
         <h2
           id='stack'
           className='text-2xl font-semibold text-gray-900'
@@ -455,7 +462,7 @@ export const Stack = () => {
 export const Conclusion = () => {
   return (
     <section>
-      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-[17px] leading-[1.6rem] text-gray-600'>
+      <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
         <h2
           id='conclusion'
           className='text-2xl font-semibold text-gray-900'
