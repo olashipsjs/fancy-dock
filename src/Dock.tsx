@@ -66,13 +66,13 @@ const Dock = () => {
   useGSAP(() => {
     gsap.fromTo(
       '#indicator',
-      { x: -8, opacity: 0.5, ease: 'bounce.inOut', duration: 0.2 },
+      { x: -8, opacity: 0.1, ease: 'sine.inOut', duration: 0.2 },
       { x: 0, opacity: 1 }
     );
   }, [id]);
 
   return (
-    <div className='fixed z-50 flex flex-col items-center justify-end w-full min-h-screen'>
+    <div className='fixed z-50 flex flex-col items-center justify-end w-full min-h-dvh'>
       <div className=' max-w-[400px] mx-auto p-4'>
         <div
           id='container'

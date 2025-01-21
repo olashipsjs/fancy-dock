@@ -160,7 +160,9 @@ export const Problem = () => {
         <ol className='space-y-4 list-decimal'>
           <li className='space-y-2'>
             <span>
-              <strong>Animation Optimization:</strong>
+              <strong className='font-semibold text-gray-900'>
+                Animation Optimization:
+              </strong>
             </span>
             <p>
               GSAP is a robust library, but integrating it seamlessly with
@@ -170,7 +172,9 @@ export const Problem = () => {
           </li>
           <li className='space-y-2'>
             <span>
-              <strong>Accessibility Concerns:</strong>
+              <strong className='font-semibold text-gray-900'>
+                Accessibility Concerns:
+              </strong>
             </span>
             <ul className='space-y-1 list-disc'>
               <li className='space-y-2'>
@@ -189,7 +193,9 @@ export const Problem = () => {
           </li>
           <li className='space-y-2'>
             <span>
-              <strong>Scalability:</strong>
+              <strong className='font-semibold text-gray-900'>
+                Scalability:
+              </strong>
             </span>
             <ul className='space-y-1 list-disc'>
               <li className='space-y-2'>
