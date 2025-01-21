@@ -63,7 +63,7 @@ const Dock = () => {
     gsap.to('#container', {
       duration: 0.2,
       ease: 'elastic.inOut',
-      width: showTitles ? 360 : 320,
+      width: showTitles ? '100%' : '90%',
       borderRadius: showTitles ? 16 : 24,
     });
   }, [showTitles]);
@@ -77,15 +77,15 @@ const Dock = () => {
   }, [id]);
 
   return (
-    <div className='fixed z-50 flex flex-col items-center justify-end w-full min-h-dvh'>
-      <div className=' max-w-[400px] mx-auto p-4'>
+    <div className='fixed z-50 flex flex-col items-center justify-end w-full overflow-clip min-h-dvh'>
+      <div className='max-w-[360px] w-full mx-auto p-4 flex flex-col items-center justify-center'>
         <div
           id='container'
-          className='bg-gray-900 rounded-[24px] transition-all duration-200 ease-out flex flex-col overflow-clip p-1'
+          className='bg-gray-900 rounded-[24px] transition-all duration-200 ease-out flex flex-col p-1'
         >
           <div
             id='titles'
-            className='flex flex-col overflow-x-auto overflow-clip'
+            className='flex flex-col w-full overflow-clip'
           >
             {titles.map((title) => {
               return (
