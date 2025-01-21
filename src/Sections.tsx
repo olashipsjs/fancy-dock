@@ -1,6 +1,6 @@
 export const Hero = () => {
   return (
-    <section>
+    <section id='hero'>
       <div className='w-full max-w-[1024px] mx-auto p-3 space-y-8 text-base leading-[1.6rem] text-gray-600'>
         <img
           src='/assets/images/hero.png'
@@ -17,14 +17,9 @@ export const Hero = () => {
 
 export const Intro = () => {
   return (
-    <section>
+    <section id='intro'>
       <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
-        <h2
-          className='text-2xl font-semibold text-gray-900'
-          id='intro'
-        >
-          Intro
-        </h2>
+        <h2 className='text-2xl font-semibold text-gray-900'>Intro</h2>
         <p>
           The introduction sets the stage for understanding the application and
           its functionality. This lightweight React app demonstrates dynamic UI
@@ -46,14 +41,9 @@ export const Intro = () => {
 
 export const Overview = () => {
   return (
-    <section>
+    <section id='overview'>
       <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
-        <h2
-          className='text-2xl font-semibold text-gray-900'
-          id='overview'
-        >
-          Overview
-        </h2>
+        <h2 className='text-2xl font-semibold text-gray-900'>Overview</h2>
         <p>
           This section delves into the app's primary functionality. The main
           objective of the app is to allow users to navigate between predefined
@@ -144,12 +134,9 @@ export const Overview = () => {
 
 export const Problem = () => {
   return (
-    <section>
+    <section id='problem'>
       <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
-        <h2
-          id='problem'
-          className='text-2xl font-semibold text-gray-900'
-        >
+        <h2 className='text-2xl font-semibold text-gray-900'>
           Identifying the Problem
         </h2>
         <p>
@@ -247,14 +234,9 @@ export const Problem = () => {
 
 export const Rebrand = () => {
   return (
-    <section>
+    <section id='rebrand'>
       <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
-        <h2
-          id='rebrand'
-          className='text-2xl font-semibold text-gray-900'
-        >
-          UI & Rebrand
-        </h2>
+        <h2 className='text-2xl font-semibold text-gray-900'>UI & Rebrand</h2>
         <p>
           The app's UI employs a minimalistic yet functional design, leveraging
           dark themes and rounded corners to achieve a modern look.
@@ -315,12 +297,9 @@ export const Rebrand = () => {
 
 export const Stack = () => {
   return (
-    <section>
+    <section id='stack'>
       <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
-        <h2
-          id='stack'
-          className='text-2xl font-semibold text-gray-900'
-        >
+        <h2 className='text-2xl font-semibold text-gray-900'>
           A Stack Comparison
         </h2>
         <p>
@@ -473,14 +452,9 @@ export const Stack = () => {
 
 export const Conclusion = () => {
   return (
-    <section>
+    <section id='conclusion'>
       <div className='w-full max-w-[1024px] mx-auto p-3 space-y-4 text-base leading-[1.6rem] text-gray-600'>
-        <h2
-          id='conclusion'
-          className='text-2xl font-semibold text-gray-900'
-        >
-          Conclusion
-        </h2>
+        <h2 className='text-2xl font-semibold text-gray-900'>Conclusion</h2>
         <p>
           This React app exemplifies a modern, lightweight approach to
           interactive UI design. By leveraging GSAP and Tailwind CSS, it creates

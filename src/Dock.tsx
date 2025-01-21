@@ -15,21 +15,26 @@ const Dock = () => {
   const [showTitles, setShowTitles] = React.useState(titles.length > 0);
 
   useGSAP(() => {
-    const elements = document.querySelectorAll('h2');
-    const headings = Array.from(elements);
+    const elements = document.querySelectorAll('section');
+    const elementsArray = Array.from(elements).filter(
+      (_, index) => index !== 0
+    );
 
-    setTitles(headings);
-    if (headings.length > 0) {
-      setId(headings[0].id);
+    const titles = elementsArray.map((el) => el.querySelector('h2')!);
+    titles.forEach((el, index) => (el.id = elementsArray[index].id));
+    setTitles(titles);
+
+    if (elementsArray.length > 0) {
+      setId(elementsArray[0].id);
     }
 
-    headings.forEach((heading) => {
+    elementsArray.forEach((el) => {
       ScrollTrigger.create({
-        trigger: heading,
+        trigger: el,
         start: 'top center',
         end: 'bottom center',
-        onEnter: () => setId(heading.id),
-        onEnterBack: () => setId(heading.id),
+        onEnter: () => setId(el.id),
+        onEnterBack: () => setId(el.id),
       });
     });
 
