@@ -63,7 +63,7 @@ const Dock = () => {
     gsap.to('#container', {
       duration: 0.2,
       ease: 'elastic.inOut',
-      width: showTitles ? '100%' : '90%',
+      width: showTitles ? '100%' : '92%',
       borderRadius: showTitles ? 16 : 24,
     });
   }, [showTitles]);
@@ -78,7 +78,7 @@ const Dock = () => {
 
   return (
     <div className='fixed z-50 flex flex-col items-center justify-end w-full overflow-clip min-h-dvh'>
-      <div className='max-w-[360px] w-full mx-auto p-4 flex flex-col items-center justify-center'>
+      <div className='max-w-[400px] w-full mx-auto p-3 sm:p-4 flex flex-col items-center justify-center'>
         <div
           id='container'
           className='bg-gray-900 rounded-[24px] transition-all duration-200 ease-out flex flex-col p-1'
