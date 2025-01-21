@@ -5,7 +5,7 @@ export const Hero = () => {
         <img
           src='/assets/images/hero.png'
           alt='fancy-dock-bar'
-          className='object-cover w-full rounded-md ring-gray-100 ring-1 md:h-[28rem] object-bottom aspect-video'
+          className='object-cover h-[16rem] w-full rounded-md ring-gray-100 ring-1 md:h-[28rem] object-bottom aspect-video'
         />
         <h1 className='text-3xl font-semibold text-center text-gray-900 md:text-5xl'>
           Fancy dock bar
@@ -93,10 +93,8 @@ export const Overview = () => {
                 </li>
                 <li className='space-y-2'>
                   <span>
-                    <strong className='font-semibold text-gray-900'>
-                      currentTitle:
-                    </strong>{' '}
-                    Tracks the currently selected title.
+                    <strong className='font-semibold text-gray-900'>id:</strong>{' '}
+                    Tracks the id in view.
                   </span>
                 </li>
               </ul>
@@ -107,8 +105,10 @@ export const Overview = () => {
                   Interactivity:
                 </strong>{' '}
                 Buttons within the title list dynamically update the{' '}
-                <em>currentTitle</em> while collapsing the list for a focused
-                user experience.
+                <em className='py-0.5 rounded text-gray-900 leading-none px-1 bg-gray-100'>
+                  id
+                </em>{' '}
+                while collapsing the list for a focused user experience.
               </div>
             </li>
             <li className='space-y-2'>
@@ -276,9 +276,15 @@ export const Rebrand = () => {
             <ul className='space-y-1 list-disc'>
               <li className='space-y-2'>
                 <span>
-                  <em>ArrowLeft</em> and <em>LineVertical</em> icons are
-                  strategically placed to guide users. Buttons are styled with
-                  hover effects for clarity.
+                  <em className='py-0.5 rounded text-gray-900 leading-none px-1 bg-gray-100'>
+                    ArrowLeft
+                  </em>{' '}
+                  and{' '}
+                  <em className='py-0.5 rounded text-gray-900 leading-none px-1 bg-gray-100'>
+                    LineVertical
+                  </em>{' '}
+                  icons are strategically placed to guide users. Buttons are
+                  styled with hover effects for clarity.
                 </span>
               </li>
               <li className='space-y-2'>
