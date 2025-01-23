@@ -27,8 +27,23 @@ html {
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+li,
+span,
+p {
+  text-wrap: pretty;
+}
+
 
 ul,
 li {
-  margin: 0px 16px;
+  margin: 0px 20px;
 }

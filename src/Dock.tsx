@@ -63,8 +63,9 @@ const Dock = () => {
     gsap.to('#container', {
       duration: 0.2,
       ease: 'elastic.inOut',
-      width: showTitles ? '100%' : '92%',
-      borderRadius: showTitles ? 16 : 24,
+      transformOrigin: 'center',
+      scaleX: showTitles ? '100%' : '90%',
+      borderRadius: 16,
     });
   }, [showTitles]);
 
@@ -77,11 +78,11 @@ const Dock = () => {
   }, [id]);
 
   return (
-    <div className='fixed z-50 flex flex-col items-center justify-end w-full overflow-clip min-h-dvh'>
-      <div className='max-w-[400px] w-full mx-auto p-3 sm:p-4 flex flex-col items-center justify-center'>
+    <div className='fixed bottom-0 z-50 flex flex-col items-center justify-end w-full overflow-clip'>
+      <div className='max-w-[420px] w-full mx-auto p-2.5 sm:p-4 flex flex-col items-center justify-center'>
         <div
           id='container'
-          className='bg-gray-900 rounded-[24px] transition-all duration-200 ease-out flex flex-col p-1'
+          className='flex flex-col w-full p-1 transition-all duration-200 ease-out bg-gray-900'
         >
           <div
             id='titles'
