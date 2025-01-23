@@ -8,9 +8,34 @@ import { LineVertical } from './components/icons/LineVertical';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const Progress = () => {
+  const [progress, setProgress] = React.useState(0);
+
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: document.body,
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        setProgress(Math.round(self.progress * 100));
+      },
+    });
+
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  }, []);
+
+  return (
+    <div
+      id='progress'
+      className='py-1.5 px-3 rounded-full text-white leading-[1] bg-gray-500 text-xs font-semibold cursor-default'
+    >
+      {progress}%
+    </div>
+  );
+};
+
 const Dock = () => {
   const [id, setId] = React.useState('');
-  const [progress, setProgress] = React.useState(0);
   const [titles, setTitles] = React.useState<HTMLHeadingElement[]>([]);
   const [showTitles, setShowTitles] = React.useState(titles.length > 0);
 
@@ -36,15 +61,6 @@ const Dock = () => {
         onEnter: () => setId(el.id),
         onEnterBack: () => setId(el.id),
       });
-    });
-
-    ScrollTrigger.create({
-      trigger: document.body,
-      start: 'top top',
-      end: 'bottom bottom',
-      onUpdate: (self) => {
-        setProgress(Math.round(self.progress * 100));
-      },
     });
 
     return () => {
@@ -134,12 +150,7 @@ const Dock = () => {
             >
               {titles.find((title) => title.id === id)?.textContent}
             </button>
-            <div
-              id='progress'
-              className='py-1.5 px-3 rounded-full text-white leading-[1] bg-gray-500 text-xs font-semibold cursor-default'
-            >
-              {progress}%
-            </div>
+            <Progress />
           </div>
         </div>
       </div>
