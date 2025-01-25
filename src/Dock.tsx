@@ -79,8 +79,7 @@ const Dock = () => {
     gsap.to('#container', {
       duration: 0.2,
       ease: 'elastic.inOut',
-      transformOrigin: 'center',
-      scaleX: showTitles ? '100%' : '90%',
+      width: showTitles ? '100%' : '90%',
       borderRadius: 16,
     });
   }, [showTitles]);
